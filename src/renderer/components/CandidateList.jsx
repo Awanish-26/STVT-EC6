@@ -1,6 +1,6 @@
 import React from 'react';
 import { User } from 'lucide-react';
-import CandidateCard from './CandidateCard';
+import CandidateCard from './CandidateCard.jsx';
 
 const CandidateList = ({ candidates, onEdit, onDelete, onNewCandidate }) => {
   if (candidates.length === 0) {
@@ -30,7 +30,7 @@ const CandidateList = ({ candidates, onEdit, onDelete, onNewCandidate }) => {
           Registered Candidates ({candidates.length})
         </h2>
       </div>
-      
+
       <div className="divide-y divide-gray-200">
         {candidates.map((candidate, index) => (
           <CandidateCard

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Save } from 'lucide-react';
-import FormField from './FormField';
-import { FORM_FIELDS, FORM_OPTIONS } from '../constants/FormContants';
+import FormField from './FormField.jsx';
+import { FORM_FIELDS, FORM_OPTIONS } from '../constants/FormContants.js';
 
-const CandidateForm = ({ 
-  candidate, 
-  isEditMode, 
-  onChange, 
-  onSave 
+const CandidateForm = ({
+  candidate,
+  isEditMode,
+  onChange,
+  onSave
 }) => {
   if (!isEditMode && !candidate.name) {
     return null;
@@ -36,7 +36,7 @@ const CandidateForm = ({
           <h3 className="text-lg font-medium text-gray-700 border-b pb-2">
             Working Under Details
           </h3>
-          
+
           {FORM_FIELDS.workingDetails.map((field) => (
             <FormField
               key={field.name}
@@ -56,7 +56,7 @@ const CandidateForm = ({
           <h3 className="text-lg font-medium text-gray-700 border-b pb-2">
             Personal Details
           </h3>
-          
+
           {FORM_FIELDS.personalDetails.map((field) => (
             <FormField
               key={field.name}

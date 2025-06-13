@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './components/Header';
-import CandidateForm from './components/CandidateForm';
-import CandidateList from './components/CandidateList';
-import { useCandidates } from './hooks/useCandiates';
-import './index.css';
+import Header from './components/Header.jsx';
+import CandidateForm from './components/CandidateForm.jsx';
+import CandidateList from './components/CandidateList.jsx';
+import { useCandidates } from './hooks/useCandiates.js';
+import './output.css';
 
 function App() {
   const {

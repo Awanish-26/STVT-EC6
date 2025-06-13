@@ -3,7 +3,7 @@ import { Edit, Eye, Plus } from 'lucide-react';
 
 const Header = ({ isEditMode, onToggleMode, onNewCandidate }) => {
   return (
-    <div className="flex justify-between items-center mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-lg">
+    <div className="flex justify-between items-center mb-6 bg-linear-to-r from-blue-600 to-purple-600 text-white p-4 rounded-lg">
       <h1 className="text-2xl font-bold">CMS TESTING</h1>
       <div className="flex gap-2">
         <button

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { INITIAL_CANDIDATE_STATE } from '../constants/FormContants';
+import { INITIAL_CANDIDATE_STATE } from '../constants/FormContants.js';
 
 export const useCandidates = () => {
   const [candidates, setCandidates] = useState([]);
@@ -18,11 +18,11 @@ export const useCandidates = () => {
       alert('Please enter candidate name');
       return;
     }
-    
+
     const existingIndex = candidates.findIndex(
       c => c.name === currentCandidate.name && c.email === currentCandidate.email
     );
-    
+
     if (existingIndex >= 0) {
       const updatedCandidates = [...candidates];
       updatedCandidates[existingIndex] = { ...currentCandidate };
@@ -30,7 +30,7 @@ export const useCandidates = () => {
     } else {
       setCandidates([...candidates, { ...currentCandidate }]);
     }
-    
+
     setIsEditMode(false);
   };
 
