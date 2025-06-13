@@ -32,7 +32,7 @@ Before you begin, ensure you have met the following requirements:
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
+    git clone https://github.com/Awanish-26/STVT-EC6/tree/rishabh/src/main/backend
     cd STC_EC6_Backend
     ```
 
