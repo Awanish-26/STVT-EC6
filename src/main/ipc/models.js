@@ -1,4 +1,4 @@
-const { db } = require('../config/database');
+const { db } = require('./database');
 
 class TraineeModel {
   // Get all trainees
@@ -50,11 +50,11 @@ class TraineeModel {
       otherInformation, computerKnowledge
     ];
 
-    db.run(sql, params, function(err) {
+    db.run(sql, params, function (err) {
       if (err) {
         return callback(err, null);
       }
-            const lastId = this && this.lastID !== undefined ? this.lastID : null;
+      const lastId = this && this.lastID !== undefined ? this.lastID : null;
       callback(null, { id: lastId });
     });
   }

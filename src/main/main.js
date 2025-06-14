@@ -1,5 +1,8 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('node:path');
+const { initializeDatabase } = require('./ipc/database');
+require('./ipc/models'); // Ensure the model is loaded before using it
+require('./ipc/trainee');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -26,6 +29,8 @@ const createWindow = () => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  // Initialize the database
+  initializeDatabase();
   createWindow();
 
   // On OS X it's common to re-create a window in the app when the
