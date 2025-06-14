@@ -1,7 +1,25 @@
 import React from 'react';
 import { Edit, Eye, Plus } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const Header = ({ isEditMode, onToggleMode, onNewCandidate }) => {
+
+  const [trainees, setTrainees] = useState([]);
+
+  useEffect(() => {
+    loadTrainees();
+  }, []);
+
+  const loadTrainees = async () => {
+    try {
+      const data = await window.api.getTrainees();
+      setTrainees(data);
+    } catch (error) {
+      console.error('Failed to load trainees:', error);
+    }
+  };
+  console.log('Trainees:', trainees);
+
   return (
     <div className="flex justify-between items-center mb-6 bg-linear-to-r from-blue-600 to-purple-600 text-white p-4 rounded-lg">
       <h1 className="text-2xl font-bold">CMS TESTING</h1>

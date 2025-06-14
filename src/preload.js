@@ -1,2 +1,9 @@
-// See the Electron documentation for details on how to use preload scripts:
-// https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
+const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld('api', {
+    getTrainees: () => ipcRenderer.invoke('trainees:getAll'),
+    getTraineeById: (id) => ipcRenderer.invoke('trainees:getById', id),
+    createTrainee: (data) => ipcRenderer.invoke('trainees:create', data),
+    updateTrainee: (id, data) => ipcRenderer.invoke('trainees:update', id, data),
+    deleteTrainee: (id) => ipcRenderer.invoke('trainees:delete', id),
+});
