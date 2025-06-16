@@ -10,6 +10,7 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
+    "dev": "vite",
     "tailwind:build": "tailwindcss -i ./src/renderer/index.css -o ./src/renderer/output.css --minify",
     "tailwind:watch": "tailwindcss -i ./src/renderer/index.css -o ./src/renderer/output.css --minify --watch"
   },
@@ -21,6 +22,7 @@
   "license": "BSD-2-Clause",
   "devDependencies": {
     "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
     "@babel/preset-react": "^7.27.1",
     "@electron-forge/cli": "^7.8.1",
     "@electron-forge/maker-deb": "^7.8.1",
@@ -31,7 +33,7 @@
     "@electron-forge/plugin-fuses": "^7.8.1",
     "@electron-forge/plugin-webpack": "^7.8.1",
     "@electron/fuses": "^1.8.0",
-    "@vercel/webpack-asset-relocator-loader": "^1.7.3",
+    "@vercel/webpack-asset-relocator-loader": "^1.7.4",
     "autoprefixer": "^10.4.21",
     "babel-loader": "^10.0.0",
     "css-loader": "^6.11.0",
@@ -42,11 +44,16 @@
     "style-loader": "^3.3.4"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.10",
+    "buffer": "^6.0.3",
     "electron-squirrel-startup": "^1.0.1",
+    "events": "^3.3.0",
     "lucide-react": "^0.514.0",
+    "process": "^0.11.10",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "sqlite3": "^5.1.7",
-    "tailwindcss": "^4.1.10"
+    "tailwindcss": "^4.1.10",
+    "util": "^0.12.5"
   }
 }
